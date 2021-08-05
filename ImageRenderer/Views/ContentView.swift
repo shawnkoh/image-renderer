@@ -78,11 +78,13 @@ final class ContentViewModel: ObservableObject {
         guard let underlay = underlay else {
             return nil
         }
+
         return autoreleasepool {
             UIGraphicsImageRenderer(size: .init(width: length, height: length))
                 .image { context in
                     let angle = self.angle + self.currentAngle
                     let offset = self.offset + self.currentOffset
+
                     // scale the image relative to the UI (because SwiftUI does this) while maintaining the aspect ratio
                     // to do so, we need to find which side is bigger and scale it by that.
                     let uiScale: CGFloat
@@ -92,10 +94,22 @@ final class ContentViewModel: ObservableObject {
                         uiScale = UIScreen.canvasLength / underlay.size.height
                     }
                     let outputScale = CGFloat(length) / UIScreen.canvasLength
-                    let width = underlay.size.width * uiScale * CGFloat(scale) * outputScale
-                    let height = underlay.size.height * uiScale * CGFloat(scale) * outputScale
 
-                    // TODO: Using context and context.cgContext, apply the appropriate transformations before calling underlay.draw(in:)
+                    let width = underlay.size.width * uiScale * outputScale
+                    let height = underlay.size.height * uiScale * outputScale
+
+                    var newRect = CGRect(origin: CGPoint.zero, size: CGSize(width: width, height: height))
+                        .applying(CGAffineTransform(scaleX: CGFloat(scale), y: CGFloat(scale)))
+                        .applying(CGAffineTransform(rotationAngle: CGFloat(angle.radians)))
+                    newRect.origin = CGPoint(
+                        x: ((UIScreen.canvasLength / 2) + offset.width) * outputScale - (newRect.width / 2),
+                        y: ((UIScreen.canvasLength / 2) + offset.height) * outputScale - (newRect.height / 2)
+                    )
+
+                    guard let rotatedImage = underlay.rotate2(radians: angle.radians) else {
+                        return
+                    }
+                    rotatedImage.draw(in: newRect)
                 }
         }
     }
@@ -172,7 +186,7 @@ struct ContentView: View {
                     }
 
                     Button {
-                        viewModel.export(length: resolution.rawValue)
+                        viewModel.export(length: resolution.rawValue * Double(UIScreen.screenHeight))
                     } label: {
                         Text("Export")
                     }
