@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,13 @@
 		8614D8D326BBC05700D8564D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8614D8D226BBC05700D8564D /* ContentView.swift */; };
 		8614D8D526BBC05800D8564D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8614D8D426BBC05800D8564D /* Assets.xcassets */; };
 		8614D8D826BBC05800D8564D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8614D8D726BBC05800D8564D /* Preview Assets.xcassets */; };
+		869F5E3D26BBC1A1000DC1A6 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = 869F5E3C26BBC1A1000DC1A6 /* Resolver */; };
+		869F5E3F26BBC1B6000DC1A6 /* CGPoint++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869F5E3E26BBC1B6000DC1A6 /* CGPoint++.swift */; };
+		869F5E4126BBC1BE000DC1A6 /* CGSize++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869F5E4026BBC1BE000DC1A6 /* CGSize++.swift */; };
+		869F5E4326BBC1C6000DC1A6 /* UIScreen++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869F5E4226BBC1C6000DC1A6 /* UIScreen++.swift */; };
+		869F5E4526BBC1D3000DC1A6 /* UnderlayPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869F5E4426BBC1D3000DC1A6 /* UnderlayPicker.swift */; };
+		869F5E4726BBC1DB000DC1A6 /* WorldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869F5E4626BBC1DB000DC1A6 /* WorldView.swift */; };
+		869F5E4926BBC1FE000DC1A6 /* Resolver+ResolverRegistering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869F5E4826BBC1FE000DC1A6 /* Resolver+ResolverRegistering.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +27,12 @@
 		8614D8D426BBC05800D8564D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8614D8D726BBC05800D8564D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8614D8D926BBC05800D8564D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		869F5E3E26BBC1B6000DC1A6 /* CGPoint++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint++.swift"; sourceTree = "<group>"; };
+		869F5E4026BBC1BE000DC1A6 /* CGSize++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize++.swift"; sourceTree = "<group>"; };
+		869F5E4226BBC1C6000DC1A6 /* UIScreen++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen++.swift"; sourceTree = "<group>"; };
+		869F5E4426BBC1D3000DC1A6 /* UnderlayPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlayPicker.swift; sourceTree = "<group>"; };
+		869F5E4626BBC1DB000DC1A6 /* WorldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldView.swift; sourceTree = "<group>"; };
+		869F5E4826BBC1FE000DC1A6 /* Resolver+ResolverRegistering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resolver+ResolverRegistering.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				869F5E3D26BBC1A1000DC1A6 /* Resolver in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,11 +66,13 @@
 		8614D8CF26BBC05700D8564D /* ImageRenderer */ = {
 			isa = PBXGroup;
 			children = (
-				8614D8D026BBC05700D8564D /* ImageRendererApp.swift */,
-				8614D8D226BBC05700D8564D /* ContentView.swift */,
 				8614D8D426BBC05800D8564D /* Assets.xcassets */,
+				869F5E3926BBC189000DC1A6 /* Extensions */,
+				8614D8D026BBC05700D8564D /* ImageRendererApp.swift */,
 				8614D8D926BBC05800D8564D /* Info.plist */,
 				8614D8D626BBC05800D8564D /* Preview Content */,
+				869F5E3A26BBC18D000DC1A6 /* Services */,
+				869F5E3826BBC186000DC1A6 /* Views */,
 			);
 			path = ImageRenderer;
 			sourceTree = "<group>";
@@ -67,6 +83,34 @@
 				8614D8D726BBC05800D8564D /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		869F5E3826BBC186000DC1A6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8614D8D226BBC05700D8564D /* ContentView.swift */,
+				869F5E4426BBC1D3000DC1A6 /* UnderlayPicker.swift */,
+				869F5E4626BBC1DB000DC1A6 /* WorldView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		869F5E3926BBC189000DC1A6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				869F5E3E26BBC1B6000DC1A6 /* CGPoint++.swift */,
+				869F5E4026BBC1BE000DC1A6 /* CGSize++.swift */,
+				869F5E4226BBC1C6000DC1A6 /* UIScreen++.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		869F5E3A26BBC18D000DC1A6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				869F5E4826BBC1FE000DC1A6 /* Resolver+ResolverRegistering.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -85,6 +129,9 @@
 			dependencies = (
 			);
 			name = ImageRenderer;
+			packageProductDependencies = (
+				869F5E3C26BBC1A1000DC1A6 /* Resolver */,
+			);
 			productName = ImageRenderer;
 			productReference = 8614D8CD26BBC05700D8564D /* ImageRenderer.app */;
 			productType = "com.apple.product-type.application";
@@ -112,6 +159,9 @@
 				Base,
 			);
 			mainGroup = 8614D8C426BBC05700D8564D;
+			packageReferences = (
+				869F5E3B26BBC1A1000DC1A6 /* XCRemoteSwiftPackageReference "Resolver" */,
+			);
 			productRefGroup = 8614D8CE26BBC05700D8564D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,6 +188,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				869F5E4326BBC1C6000DC1A6 /* UIScreen++.swift in Sources */,
+				869F5E4526BBC1D3000DC1A6 /* UnderlayPicker.swift in Sources */,
+				869F5E4726BBC1DB000DC1A6 /* WorldView.swift in Sources */,
+				869F5E4926BBC1FE000DC1A6 /* Resolver+ResolverRegistering.swift in Sources */,
+				869F5E4126BBC1BE000DC1A6 /* CGSize++.swift in Sources */,
+				869F5E3F26BBC1B6000DC1A6 /* CGPoint++.swift in Sources */,
 				8614D8D326BBC05700D8564D /* ContentView.swift in Sources */,
 				8614D8D126BBC05700D8564D /* ImageRendererApp.swift in Sources */,
 			);
@@ -328,6 +384,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		869F5E3B26BBC1A1000DC1A6 /* XCRemoteSwiftPackageReference "Resolver" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hmlongco/Resolver";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.4.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		869F5E3C26BBC1A1000DC1A6 /* Resolver */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 869F5E3B26BBC1A1000DC1A6 /* XCRemoteSwiftPackageReference "Resolver" */;
+			productName = Resolver;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8614D8C526BBC05700D8564D /* Project object */;
 }
